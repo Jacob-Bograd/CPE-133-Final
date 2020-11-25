@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -119,10 +120,7 @@ read_verilog -library xil_defaultlib {
   {C:/Users/bothe/Nextcloud/Cal poly/Fall 2020/CPE 133/Vidado/CPE133Labs/CPE133Labs.srcs/sources_1/new/other_clock_devider.v}
   {C:/Users/bothe/Nextcloud/Cal poly/Fall 2020/CPE 133/Vidado/CPE133Labs/CPE133Labs.srcs/sources_1/new/refreshcounter.v}
 }
-read_vhdl -library xil_defaultlib {
-  {C:/Users/bothe/Nextcloud/Cal poly/Fall 2020/CPE 133/Week 8/Wend lab/given files/bc_dec.vhd}
-  {C:/Users/bothe/Nextcloud/Cal poly/Fall 2020/CPE 133/Week 8/Wend lab/given files/clock_div2.vhd}
-}
+read_vhdl -library xil_defaultlib {{C:/Users/bothe/Nextcloud/Cal poly/Fall 2020/CPE 133/Week 8/Wend lab/given files/bc_dec.vhd}}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

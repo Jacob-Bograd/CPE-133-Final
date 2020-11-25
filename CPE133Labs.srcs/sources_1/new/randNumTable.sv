@@ -21,12 +21,21 @@
 
 
 module randNumTable(
-    input [3:0]randNum,
+   // input [3:0]randNum,
     output logic [15:0]RandNumberDecimal,
-    input reset
+    input clk,
+    input button,
+    //input reset
+    output logic [3:0]randNum = 0
     );
+    //logic [3:0]randNum = 0;
     
-    always_ff @(posedge reset)
+    always_ff @(posedge clk) //this block is to count the amount of times that the user inputs and to generate the random number off of that 
+        if(button)
+            begin
+                randNum = randNum + 1;
+            end
+    always_comb //this is the block that takes in a random number and then sends out a 16 bit number for the 7 seg display
     begin
     case (randNum)
     4'b0000: //This is the random number for ACDC

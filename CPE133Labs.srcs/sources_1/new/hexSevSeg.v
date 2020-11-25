@@ -41,7 +41,7 @@ module hexSevSeg(
 
     other_clock_devider clock_divider(.clk(clk), .divided_clock(refreshclock));
     //clk_div2 refhreshclock_generator(.clk(clk), .sclk(refreshclock)); //this divides the clock so that the discplay workds //this is the one that was liberated form a pervious project
-    refreshcounter Refreshcounter_wrapper(.refresh_clock(refreshclock), .refreshcounter(refreshcounter)); //This is a counter to power on each digit seperatley
+    refreshcounter Refreshcounter_wrapper(.refresh_clock(refreshclock), .refreshcounter(refreshcounter)); //This is a counter to power on each digit seperatley //TEMP CHANGED FORM REFRESHCLOCK TO CLK FOR SIM 
     anode_control anode_control_wrapper(.refreshcounter(refreshcounter), .anode(anode)); //this controlls which anode is turned on
     //BCD_contorl BCD_control_wrapper(.digit1(manual1), .digit2(manual2), .digit3(manual3), .digit4(manual4), .refreshcounter(refreshcounter), .ONE_DIGIT(ONE_DIGIT), .clock(clk));//this one is for manually testing without "switch"
      BCD_contorl BCD_control_wrapper(.digit1(switch[3:0]), .digit2(switch[7:4]), .digit3(switch[11:8]), .digit4(switch[15:12]), .refreshcounter(refreshcounter), .ONE_DIGIT(ONE_DIGIT), .clock(clk)); //this breaks the 16 bit switcehs into 4 bit numbers  //this might not teed the clock

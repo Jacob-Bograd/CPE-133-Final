@@ -20,7 +20,7 @@ module other_clock_devider(
     input wire clk, //100 MHz clock that is straight from the board
     output reg divided_clock = 0 //This is the final divided clock from this program at 1hz
     );
-    localparam div_value = 4999; //this is the value that everything is divided by
+    localparam div_value = 499; //this is the value that everything is divided by //experimenting by changing it to 499
     
     //counter
     integer counter_value = 0; //32 bit wide reg bus

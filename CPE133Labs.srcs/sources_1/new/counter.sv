@@ -18,20 +18,10 @@
 
 
 module counter(
-    input  start, //reset in RandNumTable needs to come before start if simulating
-    output logic [3:0]randNum
+    input switch,
+    output logic [3:0]randNum = 0
     );
- 
-   always_comb
-    begin
-        if(start == 1)
-            begin
-                randNum[0] = $urandom_range(0,1);
-                randNum[1] = $urandom_range(0,1);
-                randNum[2] = $urandom_range(0,1);
-                randNum[3] = $urandom_range(0,1);
-            end
-    end
-    
+always@ (posedge switch) randNum <= randNum + 1; 
+
     
 endmodule

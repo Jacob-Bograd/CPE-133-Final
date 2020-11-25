@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1.1 (win64) Build 2960000 Wed Aug  5 22:57:20 MDT 2020
-| Date             : Sun Nov 22 19:48:04 2020
+| Date             : Tue Nov 24 19:40:58 2020
 | Host             : thicc-lad running 64-bit major release  (build 9200)
 | Command          : report_power -file FinalProject_power_routed.rpt -pb FinalProject_power_summary_routed.pb -rpx FinalProject_power_routed.rpx
 | Design           : FinalProject
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 28.827 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 33.826 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 28.341                           |
+| Dynamic (W)              | 33.340                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.435 |      261 |       --- |             --- |
-|   LUT as Logic |     0.363 |      102 |     20800 |            0.49 |
-|   Register     |     0.034 |      107 |     41600 |            0.26 |
-|   CARRY4       |     0.032 |       16 |      8150 |            0.20 |
+| Slice Logic    |     1.377 |      827 |       --- |             --- |
+|   LUT as Logic |     1.298 |      426 |     20800 |            2.05 |
+|   Register     |     0.039 |      250 |     41600 |            0.60 |
+|   CARRY4       |     0.034 |       16 |      8150 |            0.20 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
-|   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     0.599 |      244 |       --- |             --- |
-| I/O            |    27.307 |       47 |       106 |           44.34 |
+|   Others       |     0.000 |       59 |       --- |             --- |
+| Signals        |     1.497 |      769 |       --- |             --- |
+| I/O            |    30.466 |       48 |       106 |           45.28 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    28.827 |          |           |                 |
+| Total          |    33.826 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.447 |       1.106 |      0.341 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     1.051 |       0.998 |      0.053 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     7.710 |       7.709 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     3.287 |       2.946 |      0.341 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     1.167 |       1.114 |      0.053 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     8.604 |       8.603 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,16 +138,31 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| FinalProject               |    28.341 |
-|   FSM_Case_0               |     0.055 |
-|   FSM_Case_10              |     0.050 |
-|   HexSseg                  |     0.211 |
-|     Refreshcounter_wrapper |     0.068 |
-|     clock_divider          |     0.143 |
-|   anMux                    |     0.141 |
-|   ccSseg                   |     0.243 |
-|     my_clk                 |     0.172 |
-|   ssegMux                  |     0.145 |
+| FinalProject               |    33.340 |
+|   FSM_Case_0               |     0.043 |
+|   FSM_Case_1               |     0.050 |
+|   FSM_Case_10              |     0.048 |
+|   FSM_Case_11              |     0.050 |
+|   FSM_Case_12              |     0.044 |
+|   FSM_Case_13              |     0.051 |
+|   FSM_Case_14              |     0.047 |
+|   FSM_Case_15              |     0.049 |
+|   FSM_Case_2               |     0.050 |
+|   FSM_Case_3               |     0.048 |
+|   FSM_Case_4               |     0.052 |
+|   FSM_Case_5               |     0.051 |
+|   FSM_Case_6               |     0.052 |
+|   FSM_Case_7               |     0.050 |
+|   FSM_Case_8               |     0.048 |
+|   FSM_Case_9               |     0.048 |
+|   HexSseg                  |     0.252 |
+|     Refreshcounter_wrapper |     0.092 |
+|     clock_divider          |     0.160 |
+|   RandNumterToDecimal      |     0.616 |
+|   anMux                    |     0.149 |
+|   ccSseg                   |     0.265 |
+|     my_clk                 |     0.181 |
+|   ssegMux                  |     0.214 |
 +----------------------------+-----------+
 
 

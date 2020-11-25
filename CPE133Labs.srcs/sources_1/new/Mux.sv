@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Jacob Bograd
 // 
 // Create Date: 10/09/2020 07:42:34 PM
 // Design Name: 
@@ -9,7 +9,7 @@
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: This MUX is modified from a pervious lab, it takes two inputs and two selsects. one select is ignored and the ohter one decides if the Hex or Crap/Cool is displayed.
 // 
 // Dependencies: 
 // 

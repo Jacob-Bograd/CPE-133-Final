@@ -5,17 +5,15 @@
 // Design Name: This is the "head" FSM module
 // Module Name: Big_FSM
 // Description: This program takes the randNum and compares it to a table, from there it sends the randNum to the correct FSM that is downstream
-// Additional Comments: This module is NOT a FSM
+// Additional Comments: This module is NOT a FSM, it is a MUX
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Big_FSM( //I think that this is not needed
+module Big_FSM( 
     input [15:0]switches, //This is the raw switches input
     input logic check,    //this is the button for checking
     input logic [3:0]randNum,  //This is the randum number that is being compared int the table
-    output [3:0]power,
-    output cc,       //This is the final output that is going to say "crap" or "cool"
     output logic power0,  //powers on  FSM 0
     output logic power1,  //powers on FSM 1
     output logic power2,  //powers on FSM 2

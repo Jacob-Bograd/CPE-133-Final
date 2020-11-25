@@ -28,9 +28,12 @@ module FinalSim(
     logic reset; //this is reset/start
     logic clk; //this is the clock
     logic [7:0]ssegs; //this is the final output to the seven seg display
-    logic [3:0]an; //this is the final an to the seven seg     
+    logic [3:0]an; //this is the final an to the seven seg  
+    logic diplayhex;
+    logic displaycc;
+  
     
-    FinalProject Labl_inst(.switches(switches), .check(check), .reset(reset), .clk(clk), .ssegs(ssegs), .an(an));
+    FinalProject Labl_inst(.switches(switches), .check(check), .reset(reset), .clk(clk), .ssegs(ssegs), .an(an), .displayHex(diplayhex), .displaycc(displaycc));
     always
     begin
     clk = 1;
@@ -43,15 +46,55 @@ module FinalSim(
     
     initial
     begin 
-    switches = 15'b0011101100111010; check = 0; reset = 1;
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    reset = 0;
+    #5
+    reset = 1;
+    #5
+    
+    
+    
+    
+    
+    
+    
+    
+    switches = 15'b0011101100111010;  check = 0; reset = 1;  diplayhex = 0; displaycc = 1;
 
-    switches = 15'b0011101100111010; check = 0; reset = 1;
+    switches = 15'b0011101100111010;  check = 0;  reset = 1;
     #40
-    switches = 15'b0011101100111010; check = 1; reset = 0;
+    switches = 15'b0011101100111010;  check = 1; reset = 0;
     #40
-    switches = 15'b0011101100111010; check = 0; reset = 0;
+    switches = 15'b0011101100111010;  check = 0; reset = 0;
     #40
-    switches = 15'b1010110011011101; check = 1; reset = 0;
+    switches = 15'b1010110011011101;  check = 1; reset = 0; diplayhex = 0; displaycc = 1;
     #40
     switches = 15'b1010110011011101; check = 0; reset = 1;
     #40
